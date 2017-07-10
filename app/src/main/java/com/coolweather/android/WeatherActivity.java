@@ -154,7 +154,7 @@ public class WeatherActivity extends AppCompatActivity {
      */
     private void showWeatherInfo(Weather weather){
             String cityName=weather.basic.cityName;
-            String updateTime=weather.basic.update.updateTime.split("")[1];
+            String updateTime=weather.basic.update.updateTime.split(" ")[1];
             String degree=weather.now.temperature+"℃";
             String weatherInfo=weather.now.more.info;
             titleCity.setText(cityName);
@@ -192,7 +192,7 @@ public class WeatherActivity extends AppCompatActivity {
      * 加载每日一图
      */
     private void loadBingPic(){
-        String requestBingPic="https://guolin.tech/api/bing_pic";
+        String requestBingPic="http://guolin.tech/api/bing_pic";
         HttpUtil.sendOKHttpRequest(requestBingPic, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
